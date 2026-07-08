@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ตัวจิ๋ว — แอปคู่ใจคุณแม่ ตั้งแต่ในครรภ์ จนลูกวิ่งเล่น</title>
+<meta name="description" content="ตัวจิ๋ว แอปดูแลแม่และลูกน้อย ติดตามครรภ์รายสัปดาห์ ตารางวัคซีน กราฟเติบโต WHO บันทึกประจำวัน ใช้ฟรี ออฟไลน์ได้" />
+<meta property="og:title" content="ตัวจิ๋ว — แอปคู่ใจคุณแม่" />
+<meta property="og:description" content="ติดตามครรภ์ · วัคซีน · กราฟเติบโต · บันทึกลูกน้อย — ครบ จบ ในแอปเดียว ใช้ฟรี!" />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E👣%3C/text%3E%3C/svg%3E" />
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--brown:#8B5E4B;--brown-dark:#6B4636;--pink:#D87E8C;--pink-deep:#C4596A;--cream:#FBF2EB;--card:#fff;--line:#F1E4DA;--text:#4A332A;--muted:#8a6f63}
+html{scroll-behavior:smooth}
+body{font-family:"Sukhumvit Set","Noto Sans Thai","Thonburi",-apple-system,BlinkMacSystemFont,sans-serif;color:var(--text);background:var(--cream);line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+a{text-decoration:none}
+
+/* Hero */
+.hero{background:linear-gradient(160deg,#8B5E4B 0%,#A06F58 45%,#D87E8C 120%);color:#fff;text-align:center;padding:64px 20px 72px;position:relative;overflow:hidden}
+.hero .deco{position:absolute;opacity:.16;font-size:150px}
+.mark{width:104px;height:104px;border-radius:50%;background:rgba(255,255,255,.22);display:inline-grid;place-items:center;font-size:60px;margin-bottom:8px;box-shadow:0 10px 30px rgba(74,51,42,.25)}
+.brand{font-size:52px;font-weight:900;letter-spacing:.5px}
+.tagline{font-size:26px;font-weight:600;margin-top:14px;color:#FBE9EC}
+.sub{font-size:18px;margin-top:12px;opacity:.92;max-width:560px;margin-left:auto;margin-right:auto}
+.cta{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:15px 26px;border-radius:16px;font-size:18px;font-weight:800;transition:transform .12s,box-shadow .12s}
+.btn:active{transform:scale(.97)}
+.btn-ios{background:#fff;color:var(--brown-dark);box-shadow:0 12px 28px rgba(74,51,42,.28)}
+.btn-line{background:#06C755;color:#fff;box-shadow:0 12px 28px rgba(6,199,85,.32)}
+.btn-web{background:rgba(255,255,255,.18);color:#fff;border:2px solid rgba(255,255,255,.55)}
+.freebar{margin-top:26px;font-size:16px;font-weight:700;color:#FFE6AE}
+
+/* Features */
+.section{padding:64px 0}
+.h2{text-align:center;font-size:34px;font-weight:900;color:var(--brown-dark)}
+.h2 em{font-style:normal;color:var(--pink-deep)}
+.lead{text-align:center;color:var(--muted);font-size:17px;margin-top:8px}
+.grid{margin-top:38px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 10px 26px rgba(122,84,64,.08)}
+.feat .em{width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,#FFF3EB,#FCE6DE);display:grid;place-items:center;font-size:34px;margin-bottom:14px}
+.feat h3{font-size:21px;font-weight:800;color:var(--brown-dark)}
+.feat p{color:var(--muted);font-size:15.5px;margin-top:6px}
+
+/* Android note */
+.android{background:linear-gradient(135deg,#FCEAEB,#F7D9DE);border:2px solid #EBB3C2;border-radius:24px;padding:30px;text-align:center;margin-top:44px}
+.android h3{font-size:24px;font-weight:900;color:var(--brown-dark)}
+.android p{color:#8a6f63;margin-top:8px;font-size:16px}
+.android .g{font-size:52px}
+
+/* Download strip */
+.dl{background:linear-gradient(160deg,#8B5E4B,#6B4636);color:#fff;text-align:center;padding:60px 20px}
+.dl h2{font-size:32px;font-weight:900}
+.dl p{opacity:.9;margin-top:8px}
+
+footer{background:var(--brown-dark);color:#E9D8CC;text-align:center;padding:34px 20px;font-size:14px}
+footer a{color:#FCEAEB;font-weight:700}
+footer .row{margin-top:10px;opacity:.85}
+.disc{font-size:12.5px;opacity:.7;margin-top:14px;max-width:640px;margin-left:auto;margin-right:auto}
+@media (max-width:520px){.brand{font-size:42px}.tagline{font-size:22px}.h2{font-size:28px}.btn{width:100%;justify-content:center}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="deco" style="top:10px;right:20px;transform:rotate(14deg)">🤰</div>
+  <div class="deco" style="bottom:-10px;left:10px;transform:rotate(-12deg)">👶</div>
+  <div class="wrap">
+    <div class="mark">👣</div>
+    <div class="brand">ตัวจิ๋ว</div>
+    <div class="tagline">แอปคู่ใจคุณแม่ — ตั้งแต่ในครรภ์ จนลูกวิ่งเล่น 💕</div>
+    <div class="sub">ติดตามครรภ์ · วัคซีน · กราฟเติบโต · บันทึกลูกน้อย — ครบ จบ ในแอปเดียว</div>
+    <div class="cta">
+      <a class="btn btn-ios" href="https://apps.apple.com/app/id6783621193">🍎 โหลดบน App Store</a>
+      <a class="btn btn-line" href="https://line.me/R/ti/p/@777ssxzo">💬 แอดไลน์ @777ssxzo</a>
+      <a class="btn btn-web" href="https://micamegan49-sketch.github.io/mom-baby/">💻 ลองเลยบนเว็บ</a>
+    </div>
+    <div class="freebar">💯 ใช้ฟรี · 📴 ออฟไลน์ได้ · 🔒 ข้อมูลเก็บในเครื่อง ปลอดภัย</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="h2">ทำไมคุณแม่ต้อง <em>ตัวจิ๋ว</em></div>
+    <div class="lead">ไม่ต้องโหลดหลายแอปให้วุ่นวาย รวมทุกอย่างที่คุณแม่ต้องใช้ไว้ในที่เดียว</div>
+    <div class="grid">
+      <div class="feat"><div class="em">🤰</div><h3>ติดตามครรภ์รายสัปดาห์</h3><p>เทียบขนาดลูกเป็นผลไม้ · ภาพน้องขยับทุกวัน · นับลูกดิ้น · จับเวลาเจ็บท้อง · ใส่อายุครรภ์ตามที่หมอบอกได้</p></div>
+      <div class="feat"><div class="em">💉</div><h3>ตารางวัคซีน (EPI ไทย)</h3><p>คำนวณกำหนดฉีดจากวันเกิดอัตโนมัติ เตือนไม่ให้พลาด บันทึกวันฉีดจริงได้</p></div>
+      <div class="feat"><div class="em">📈</div><h3>กราฟเติบโต + พัฒนาการ</h3><p>เทียบเกณฑ์ WHO ดูง่าย เช็กพัฒนาการตามวัยว่าลูกโตสมวัยไหม</p></div>
+      <div class="feat"><div class="em">📝</div><h3>บันทึกประจำวัน แตะเดียวจบ</h3><p>ให้นม · นอน · ผ้าอ้อม จดง่าย ดูย้อนหลังได้ รู้พฤติกรรมลูก</p></div>
+      <div class="feat"><div class="em">🧮</div><h3>วางแผนค่าใช้จ่าย</h3><p>ค่าเลี้ยงลูก 1 คน ราคาคลอด/วัคซีนทุกจังหวัด (ข้อมูลจริงพร้อมแหล่งอ้างอิง)</p></div>
+      <div class="feat"><div class="em">☁️</div><h3>ซิงค์ข้ามเครื่อง (ทางเลือก)</h3><p>ใช้ร่วมกันในครอบครัว มือถือ+คอม ข้อมูลไม่หาย (จะเปิดใช้หรือไม่ก็ได้)</p></div>
+    </div>
+
+    <div class="android">
+      <div class="g">🤖🎁</div>
+      <h3>Android กำลังเปิดทดสอบ!</h3>
+      <p>คุณแม่สาย Android อยากลองก่อนใคร + ลุ้นรับ <strong>กระเป๋าคุณแม่ฟรี</strong> 👜<br>ทักไลน์ <a href="https://line.me/R/ti/p/@777ssxzo" style="color:var(--pink-deep);font-weight:800">@777ssxzo</a> เพื่อร่วมทดสอบได้เลย</p>
+    </div>
+  </div>
+</section>
+
+<section class="dl">
+  <div class="wrap">
+    <h2>เริ่มดูแลลูกน้อยวันนี้เลย 👶</h2>
+    <p>ใช้ฟรี ไม่มีค่าใช้จ่าย · โหลดได้ทั้ง iPhone และเปิดบนเว็บ</p>
+    <div class="cta">
+      <a class="btn btn-ios" href="https://apps.apple.com/app/id6783621193">🍎 App Store</a>
+      <a class="btn btn-line" href="https://line.me/R/ti/p/@777ssxzo">💬 LINE @777ssxzo</a>
+      <a class="btn btn-web" href="https://micamegan49-sketch.github.io/mom-baby/">💻 เปิดบนเว็บ</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="font-size:24px">👣 <strong>ตัวจิ๋ว</strong></div>
+  <div class="row">แอปดูแลแม่และลูกน้อย · LINE @777ssxzo</div>
+  <div class="row">
+    <a href="https://micamegan49-sketch.github.io/mom-baby/privacy.html">นโยบายความเป็นส่วนตัว</a> ·
+    <a href="https://micamegan49-sketch.github.io/mom-baby/support.html">ช่วยเหลือ</a>
+  </div>
+  <div class="disc">*ข้อมูลในแอปเป็นความรู้ทั่วไปเพื่อการดูแลเบื้องต้น ไม่ใช่คำวินิจฉัยทางการแพทย์ โปรดปรึกษาแพทย์ประกอบเสมอ</div>
+  <div class="row" style="margin-top:14px;font-size:12.5px">© 2026 ตัวจิ๋ว (tuajiw.com)</div>
+</footer>
+
+</body>
+</html>
