@@ -57,12 +57,12 @@ window.MB = window.MB || {}; MB.views = MB.views || {};
         <div class="btn-row"><button class="btn pink" id="timer-stop">■ หยุด & บันทึก</button><button class="btn ghost" id="timer-cancel">ยกเลิก</button></div>
       </div>`;
     }
-    return `<div class="card flat" style="padding:12px">
-      <div style="font-size:13px;font-weight:700;color:var(--brown-dark);margin-bottom:8px">⏱️ จับเวลาแบบเรียลไทม์</div>
+    return `<div class="card" style="padding:14px">
+      <div style="font-size:13.5px;font-weight:800;color:var(--brown-dark);margin-bottom:10px">⏱️ จับเวลาแบบเรียลไทม์</div>
       <div class="btn-row">
-        <button class="btn ghost sm" data-start="feed:ซ้าย">🍼 นมซ้าย</button>
-        <button class="btn ghost sm" data-start="feed:ขวา">🍼 นมขวา</button>
-        <button class="btn ghost sm" data-start="sleep:">😴 เริ่มนอน</button>
+        <button class="tbtn rose" data-start="feed:ซ้าย">🍼 นมซ้าย</button>
+        <button class="tbtn peach" data-start="feed:ขวา">🍼 นมขวา</button>
+        <button class="tbtn lilac" data-start="sleep:">😴 เริ่มนอน</button>
       </div>
     </div>`;
   }
@@ -201,9 +201,9 @@ window.MB = window.MB || {}; MB.views = MB.views || {};
         <button class="quick" data-q="" style="visibility:hidden"></button>
       </div>
       <div class="stat-row" style="margin-top:14px">
-        <div class="stat"><div class="v">${tFeeds}</div><div class="l">🍼 มื้อนมวันนี้</div></div>
-        <div class="stat"><div class="v">${tSleep ? (Math.round(tSleep / 6) / 10) : 0}</div><div class="l">😴 ชม.นอน</div></div>
-        <div class="stat"><div class="v">${tDiaper}</div><div class="l">🧷 ผ้าอ้อม</div></div>
+        <div class="stat rose"><div class="ic">🍼</div><div class="vwrap"><div class="v">${tFeeds}</div><div class="l">มื้อนมวันนี้</div></div></div>
+        <div class="stat lilac"><div class="ic">🌙</div><div class="vwrap"><div class="v">${tSleep ? (Math.round(tSleep / 6) / 10) : 0}</div><div class="l">ชม.นอน</div></div></div>
+        <div class="stat sky"><div class="ic">🧷</div><div class="vwrap"><div class="v">${tDiaper}</div><div class="l">ผ้าอ้อม</div></div></div>
       </div>
       ${hasTrend ? `<div class="section-title">📈 แนวโน้ม 7 วัน</div>
       <div class="card">
@@ -212,15 +212,20 @@ window.MB = window.MB || {}; MB.views = MB.views || {};
         <div style="font-size:13px;font-weight:700;color:var(--brown);margin:12px 0 2px">😴 ชม.นอน/วัน</div>
         <canvas id="tr-sleep" style="width:100%;height:88px"></canvas>
       </div>` : ''}
-      <div class="section-title">ประวัติ</div>
+      <div class="section-title">🕘 ประวัติ</div>
       ${logs.length ? Object.entries(groups).map(([day, items]) => `
-        <div style="margin:4px 4px 6px;font-size:13px;font-weight:700;color:var(--muted)">${day}</div>
-        <div class="card" style="padding:6px 14px">
-          ${items.map(l => `<div class="list-item" data-del="${l.id}">
-            <div class="ic">${TYPE[l.type] ? TYPE[l.type].em : '📝'}</div>
-            <div class="body"><div class="t">${U.esc(logTitle(l))}</div>${l.note ? `<div class="s">${U.esc(l.note)}</div>` : ''}</div>
-            <div class="meta">${U.fmtTime(l.ts)}<br/><span style="color:#D9737A;font-size:11px">ลบ</span></div>
-          </div>`).join('')}
+        <div style="margin:6px 4px 6px;font-size:13px;font-weight:700;color:var(--muted)">${day}</div>
+        <div class="card timeline" style="padding:4px 14px">
+          ${items.map((l, i) => {
+            const TINT = { feed: 'rose', sleep: 'lilac', diaper: 'sky', note: 'peach', health: 'mint' };
+            const DOT = { feed: '#E59BA6', sleep: '#9B7ED0', diaper: '#6FA8D6', note: '#D9A06A', health: '#5FBF9B' };
+            return `<div class="tl-item${i === items.length - 1 ? ' last' : ''}" data-del="${l.id}">
+              <span class="tl-rail"><span class="tl-dot" style="background:${DOT[l.type] || '#C9B7A8'}"></span></span>
+              <div class="ic ${TINT[l.type] || ''}">${TYPE[l.type] ? TYPE[l.type].em : '📝'}</div>
+              <div class="body"><div class="t">${U.esc(logTitle(l))}</div>${l.note ? `<div class="s">${U.esc(l.note)}</div>` : ''}</div>
+              <div class="meta">${U.fmtTime(l.ts)}<br><span class="del">ลบ</span></div>
+            </div>`;
+          }).join('')}
         </div>`).join('')
       : '<div class="empty"><div class="em">🍼</div><p>ยังไม่มีบันทึก เริ่มจากปุ่มด้านบนได้เลย</p></div>'}
     `;
@@ -234,4 +239,10 @@ window.MB = window.MB || {}; MB.views = MB.views || {};
       if (confirm('ลบบันทึกนี้?')) { S.removeLog(child.id, n.dataset.del); MB.render(); }
     });
   };
+
+  /* เปิดให้หน้าอื่น (หน้าหลัก) ใช้ซ้ำได้ */
+  MB.LOG_TYPE = TYPE;
+  MB.logTitle = logTitle;
+  MB.timerCardHtml = timerCardHtml;
+  MB.wireTimer = wireTimer;
 })();

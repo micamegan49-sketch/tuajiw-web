@@ -1,9 +1,9 @@
 #!/bin/bash
-# ซิงค์แอปตัวจิ๋วล่าสุดจาก ~/mom-baby มาเป็นหน้าแรกของ tuajiw.com (root)
+# ซิงค์แอปตัวจิ๋วล่าสุดจาก ~/code/mom-baby มาเป็นหน้าแรกของ tuajiw.com (root)
 # รันทุกครั้งที่อัปเดตแอป แล้ว git add -A && commit && push
 set -e
 cd "$(dirname "$0")"
-SRC="$HOME/mom-baby"
+SRC="$HOME/code/mom-baby"
 # ลบไฟล์แอปเก่าที่ root (เก็บ CNAME/.nojekyll/ios/sync-app.sh/.git ไว้)
 rm -rf css js icons img index.html manifest.json sw.js privacy.html support.html
 cp -R "$SRC/index.html" "$SRC/manifest.json" "$SRC/sw.js" \
