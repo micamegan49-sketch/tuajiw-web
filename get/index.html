@@ -1,0 +1,46 @@
+<!doctype html><html lang="th"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ดาวน์โหลดแอปตัวจิ๋ว</title>
+<link rel="icon" type="image/png" href="../icons/favicon.png" />
+<style>
+  :root{--brown:#8B5E4B;--pink:#EBB3C2;--cream:#FDF5EB}
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,"Sukhumvit Set","Helvetica Neue",sans-serif;margin:0;min-height:100vh;
+       background:linear-gradient(160deg,var(--pink),var(--brown));color:#fff;
+       display:grid;place-items:center;padding:24px}
+  .box{max-width:380px;width:100%;text-align:center}
+  .logo{width:96px;height:96px;border-radius:26px;background:var(--cream);object-fit:cover;
+        box-shadow:0 8px 28px rgba(0,0,0,.22)}
+  h1{font-size:26px;margin:18px 0 4px}
+  p.sub{margin:0 0 26px;opacity:.92;font-size:15px;line-height:1.5}
+  a.btn{display:flex;align-items:center;justify-content:center;gap:10px;
+        background:#fff;color:var(--brown);text-decoration:none;font-weight:600;font-size:16px;
+        padding:15px 18px;border-radius:16px;margin-bottom:12px;
+        box-shadow:0 4px 14px rgba(0,0,0,.16)}
+  a.btn.ghost{background:rgba(255,255,255,.16);color:#fff;box-shadow:none;
+              border:1px solid rgba(255,255,255,.45)}
+  small{display:block;margin-top:18px;opacity:.8;font-size:13px}
+  small a{color:#fff}
+</style>
+</head><body>
+<div class="box">
+  <img class="logo" src="../icons/icon-192.png" alt="ตัวจิ๋ว" />
+  <h1>ตัวจิ๋ว</h1>
+  <p class="sub">แอปดูแลแม่และลูกน้อย<br />ตั้งครรภ์ · วัคซีน · พัฒนาการ · บันทึกประจำวัน</p>
+
+  <a class="btn" id="ios" href="https://apps.apple.com/app/id6783621193">🍎 ดาวน์โหลดบน App Store</a>
+  <a class="btn" id="android" href="https://play.google.com/store/apps/details?id=app.tuajiw.mombaby">🤖 ดาวน์โหลดบน Google Play</a>
+  <a class="btn ghost" href="https://tuajiw.com/">🌐 ใช้บนเว็บเลย (ไม่ต้องติดตั้ง)</a>
+
+  <small>ฟรี ไม่มีโฆษณา · <a href="../privacy.html">ความเป็นส่วนตัว</a> · <a href="../support.html">ช่วยเหลือ</a></small>
+</div>
+<script>
+  // เรียงปุ่มตามเครื่องที่เปิด: ปุ่มของแพลตฟอร์มตัวเองขึ้นก่อน
+  var ua = navigator.userAgent || '';
+  if (/Android/i.test(ua)) {
+    var a = document.getElementById('android');
+    a.parentNode.insertBefore(a, document.getElementById('ios'));
+  }
+</script>
+</body></html>
